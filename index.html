@@ -1,1356 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Skyview Academy | Advancing Excellence</title>
-
-    <meta name="description"
-          content="Skyview Academy provides personalised tutoring, academic support, mentorship and career guidance from Grade 4 through university.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #172033;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        header {
-            width: 100%;
-            background: #ffffff;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: auto;
-            height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 25px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            color: #172033;
-        }
-
-        /* YOUR PHOTO */
-
-        .brand-photo {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            border: 3px solid #e8b84b;
-        }
-
-        .brand-text h2 {
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        .brand-text span {
-            font-size: 11px;
-            color: #777;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #172033;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #d59d23;
-        }
-
-        .nav-button {
-            background: #172033;
-            color: white !important;
-            padding: 12px 20px;
-            border-radius: 6px;
-        }
-
-        .nav-button:hover {
-            background: #d59d23;
-        }
-
-
-        /* =========================
-           HERO SECTION
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            padding-top: 78px;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(10, 20, 40, 0.97) 0%,
-                    rgba(10, 20, 40, 0.90) 50%,
-                    rgba(10, 20, 40, 0.55) 100%
-                ),
-                url("1644495624030.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-            padding: 70px 25px;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .small-title {
-            color: #e8b84b;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            color: white;
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-            font-weight: 800;
-        }
-
-        .hero h1 span {
-            color: #e8b84b;
-        }
-
-        .hero p {
-            color: #e6e9ef;
-            font-size: 19px;
-            max-width: 650px;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-block;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 6px;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .button-primary {
-            background: #e8b84b;
-            color: #172033;
-        }
-
-        .button-primary:hover {
-            background: #f2cc70;
-            transform: translateY(-2px);
-        }
-
-        .button-secondary {
-            border: 1px solid white;
-            color: white;
-        }
-
-        .button-secondary:hover {
-            background: white;
-            color: #172033;
-        }
-
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        section {
-            padding: 90px 25px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-heading {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 55px;
-        }
-
-        .section-heading span {
-            color: #d59d23;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        .section-heading h2 {
-            font-size: 42px;
-            line-height: 1.2;
-            margin: 12px 0 18px;
-            color: #172033;
-        }
-
-        .section-heading p {
-            color: #667085;
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            background: #f7f8fa;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-image {
-            height: 480px;
-            border-radius: 12px;
-            overflow: hidden;
-            background:
-                url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85")
-                center/cover;
-        }
-
-        .about-content h2 {
-            font-size: 40px;
-            line-height: 1.2;
-            margin-bottom: 22px;
-        }
-
-        .about-content p {
-            color: #667085;
-            margin-bottom: 18px;
-            font-size: 16px;
-        }
-
-        .highlight {
-            border-left: 4px solid #e8b84b;
-            padding: 15px 20px;
-            background: white;
-            margin-top: 25px;
-            font-weight: 600;
-        }
-
-
-        /* =========================
-           PROGRAMMES
-        ========================= */
-
-        .programmes {
-            background: white;
-        }
-
-        .programme-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .programme-card {
-            padding: 35px;
-            border: 1px solid #e7e9ee;
-            border-radius: 10px;
-            transition: 0.3s;
-            background: white;
-        }
-
-        .programme-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .programme-number {
-            color: #d59d23;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .programme-card h3 {
-            font-size: 24px;
-            margin: 10px 0 15px;
-        }
-
-        .programme-card p {
-            color: #667085;
-        }
-
-
-        /* =========================
-           WHY SKYVIEW
-        ========================= */
-
-        .why {
-            background: #172033;
-            color: white;
-        }
-
-        .why .section-heading h2 {
-            color: white;
-        }
-
-        .why .section-heading p {
-            color: #c7ccd5;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .why-card {
-            border: 1px solid rgba(255,255,255,0.12);
-            padding: 30px 25px;
-            border-radius: 8px;
-        }
-
-        .why-card .icon {
-            font-size: 30px;
-            color: #e8b84b;
-            margin-bottom: 18px;
-        }
-
-        .why-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .why-card p {
-            color: #c7ccd5;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           MENTORSHIP
-        ========================= */
-
-        .mentorship-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .mentorship-content h2 {
-            font-size: 40px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .mentorship-content p {
-            color: #667085;
-            margin-bottom: 20px;
-        }
-
-        .check-list {
-            list-style: none;
-        }
-
-        .check-list li {
-            margin: 13px 0;
-            font-weight: 600;
-        }
-
-        .check-list li::before {
-            content: "✓";
-            color: #d59d23;
-            font-weight: bold;
-            margin-right: 12px;
-        }
-
-        .mentor-photo {
-            height: 500px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .mentor-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-
-        /* =========================
-           CALL TO ACTION
-        ========================= */
-
-        .cta {
-            background: #e8b84b;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 17px;
-        }
-
-        .cta .button {
-            background: #172033;
-            color: white;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            background: #f7f8fa;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            color: #667085;
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            margin-bottom: 18px;
-        }
-
-        .contact-item strong {
-            display: block;
-            color: #172033;
-        }
-
-        .contact-item span {
-            color: #667085;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 15px;
-            border: 1px solid #d9dde5;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .contact-form textarea {
-            height: 130px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            padding: 15px;
-            background: #172033;
-            color: white;
-            font-weight: 700;
-            border-radius: 5px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #101725;
-            color: white;
-            padding: 50px 25px 25px;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
-        }
-
-        footer h3 {
-            margin-bottom: 15px;
-        }
-
-        footer p,
-        footer a {
-            color: #aeb5c2;
-            font-size: 14px;
-        }
-
-        footer a {
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        footer a:hover {
-            color: #e8b84b;
-        }
-
-        .copyright {
-            max-width: 1200px;
-            margin: 40px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #8e96a5;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            nav ul {
-                display: none;
-            }
-
-            .about-grid,
-            .mentorship-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .programme-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-image {
-                height: 350px;
-            }
-
-            .mentor-photo {
-                height: 400px;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .navbar {
-                height: 70px;
-            }
-
-            .brand-text h2 {
-                font-size: 17px;
-            }
-
-            .hero {
-                min-height: 90vh;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 65px 20px;
-            }
-
-            .section-heading h2,
-            .about-content h2,
-            .mentorship-content h2,
-            .contact-info h2 {
-                font-size: 32px;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .brand-photo {
-                width: 42px;
-                height: 42px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skyview Academy — Empowering Learners. Building Futures.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="1644495624030.jpg" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F2942;
+    --navy-deep:#0A1E33;
+    --orange:#F0A22E;
+    --orange-deep:#E08E12;
+    --gray-text:#5B6B7A;
+    --hero-bg:#EAF1F8;
+    --card-border:#E7ECF1;
+    --radius:12px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--navy);
+    line-height:1.5;
+  }
+  h1,h2,h3,.logo{ font-family:'Poppins', sans-serif; }
+  a{ text-decoration:none; color:inherit; }
+  ul{ list-style:none; }
+  img{ max-width:100%; display:block; }
+
+  /* ---------- Header ---------- */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 64px;
+    border-bottom:1px solid #EEF1F4;
+  }
+  .logo{
+    font-weight:800;
+    font-size:22px;
+    letter-spacing:2px;
+    color:var(--navy);
+  }
+  .logo span{
+    display:block;
+    font-size:11px;
+    font-weight:600;
+    color:var(--orange);
+    letter-spacing:5px;
+    margin-top:-2px;
+  }
+  nav ul{
+    display:flex;
+    align-items:center;
+    gap:36px;
+    font-weight:600;
+    font-size:15px;
+  }
+  nav .active{
+    color:var(--orange);
+    border-bottom:2px solid var(--orange);
+    padding-bottom:6px;
+  }
+  nav .dropdown{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-navy{ background:var(--navy); color:#fff; }
+  .btn-navy:hover{ background:var(--navy-deep); }
+  .btn-outline{
+    background:#fff;
+    color:var(--navy);
+    border:1.5px solid var(--orange);
+  }
+  .btn-outline .play{
+    width:20px; height:20px;
+    border-radius:50%;
+    background:var(--orange);
+    color:#fff;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--hero-bg);
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    align-items:end;
+    gap:40px;
+    padding:64px 64px 0 64px;
+    overflow:hidden;
+  }
+  .hero-copy{ padding-bottom:64px; max-width:620px; }
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--orange-deep);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:34px;
+    height:2px;
+    background:var(--orange);
+  }
+  .hero h1{
+    font-size:52px;
+    font-weight:700;
+    line-height:1.12;
+    color:var(--navy);
+  }
+  .hero h1 .accent{ color:var(--orange); }
+  .hero p{
+    margin-top:22px;
+    color:var(--gray-text);
+    font-size:17px;
+    max-width:520px;
+  }
+  .hero-actions{
+    margin-top:30px;
+    display:flex;
+    gap:16px;
+  }
+  .hero-image{
+    align-self:end;
+    height:100%;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .hero-image .placeholder{
+    width:100%;
+    max-width:520px;
+    aspect-ratio:4/3.1;
+    border-radius:16px 16px 0 0;
+    background:linear-gradient(160deg,#D8E4EF,#C3D5E5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#8FA6BA;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    text-align:center;
+    padding:20px;
+  }
+
+  /* ---------- Feature strip ---------- */
+  .feature-strip{
+    background:var(--navy);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:36px 64px;
+    gap:0;
+  }
+  .feature{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:0 28px;
+    border-right:1px solid rgba(255,255,255,0.12);
+    color:#fff;
+  }
+  .feature:last-child{ border-right:none; }
+  .feature .icon{
+    flex-shrink:0;
+    width:42px; height:42px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--orange);
+  }
+  .feature h3{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .feature p{
+    font-size:13.5px;
+    color:#B9C6D3;
+  }
+
+  /* ---------- Programs ---------- */
+  .programs{
+    padding:80px 64px;
+    text-align:center;
+  }
+  .programs h2{
+    font-size:34px;
+    font-weight:700;
+    color:var(--navy);
+  }
+  .programs > p{
+    margin-top:10px;
+    color:var(--gray-text);
+    font-size:16px;
+  }
+  .program-grid{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    text-align:left;
+  }
+  .program-card{
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    padding:28px 24px;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .program-card:hover{
+    box-shadow:0 12px 28px rgba(15,41,66,0.08);
+    transform:translateY(-3px);
+  }
+  .program-card .circle{
+    width:56px; height:56px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .program-card h3{
+    font-size:17px;
+    font-weight:600;
+    margin-bottom:10px;
+    color:var(--navy);
+  }
+  .program-card p{
+    font-size:14px;
+    color:var(--gray-text);
+  }
+  .circle.orange-light{ background:#FCEBD2; color:var(--orange-deep); }
+  .circle.gray-light{ background:#EEF1F4; color:var(--navy); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1024px){
+    header, .hero, .feature-strip, .programs{ padding-left:32px; padding-right:32px; }
+    nav ul{ display:none; }
+    .hero{ grid-template-columns:1fr; }
+    .hero-image{ order:-1; }
+    .feature-strip{ grid-template-columns:repeat(2,1fr); gap:24px; }
+    .feature{ border-right:none; padding:0; }
+    .program-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:560px){
+    .hero h1{ font-size:36px; }
+    .feature-strip{ grid-template-columns:1fr; }
+    .program-grid{ grid-template-columns:1fr; }
+    .hero-actions{ flex-direction:column; }
+  }
+</style>
 </head>
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <header>
-
-    <div class="navbar">
-
-        <a href="#home" class="brand">
-
-            <!-- YOUR PHOTO REPLACES THE LOGO -->
-            <img
-                src="profile.jpg"
-                alt="Skyview Academy"
-                class="brand-photo"
-            >
-
-            <div class="brand-text">
-                <h2>Skyview Academy</h2>
-                <span>Advancing Excellence</span>
-            </div>
-
-        </a>
-
-
-        <nav>
-
-            <ul>
-
-                <li><a href="#home">Home</a></li>
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#programmes">Programmes</a></li>
-
-                <li><a href="#mentorship">Mentorship</a></li>
-
-                <li><a href="#contact" class="nav-button">
-                    Get Started
-                </a></li>
-
-            </ul>
-
-        </nav>
-
-    </div>
-
+  <div class="logo">SKYVIEW<span>ACADEMY</span></div>
+  <nav>
+    <ul>
+      <li class="active">Home</li>
+      <li>About</li>
+      <li class="dropdown">Programs ▾</li>
+      <li>Who We Serve</li>
+      <li>Resources</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <button class="btn btn-navy">Get Started</button>
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-container">
-
-        <div class="hero-content">
-
-            <div class="small-title">
-                Skyview Academy
-            </div>
-
-            <h1>
-                Advancing
-                <span>Excellence.</span>
-            </h1>
-
-            <p>
-                Personalised tutoring, academic support, mentorship
-                and career guidance designed to help learners and
-                students reach their full potential.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#programmes"
-                   class="button button-primary">
-                    Explore Our Programmes
-                </a>
-
-                <a href="#contact"
-                   class="button button-secondary">
-                    Contact Us
-                </a>
-
-            </div>
-
-        </div>
-
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">ADVANCING EXCELLENCE</div>
+    <h1>Empowering Learners.<br><span class="accent">Building Futures.</span></h1>
+    <p>Skyview Academy closes educational gaps and equips learners from primary school to university with personalised tutoring, research support, mentorship, and life skills for academic achievement and success.</p>
+    <div class="hero-actions">
+      <button class="btn btn-navy">Explore Programs</button>
+      <button class="btn btn-outline"><span class="play">▶</span> Learn More</button>
     </div>
-
+  </div>
+  <div class="hero-image">
+    <div class="placeholder">Replace with your learner/mentor photo<br>(recommended: 1000×800px)</div>
+  </div>
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="about" id="about">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-            <div class="about-image"></div>
-
-            <div class="about-content">
-
-                <span class="small-title">
-                    About Skyview Academy
-                </span>
-
-                <h2>
-                    Education that goes beyond the classroom.
-                </h2>
-
-                <p>
-                    Skyview Academy is an online education and
-                    mentorship initiative committed to supporting
-                    learners and students throughout their academic
-                    journey.
-                </p>
-
-                <p>
-                    We provide structured academic support,
-                    personalised tutoring, mentorship, career
-                    guidance and life-skills development.
-                </p>
-
-                <div class="highlight">
-                    From Grade 4 through university, we help
-                    learners build the knowledge, confidence and
-                    skills they need to succeed.
-                </div>
-
-            </div>
-
-        </div>
-
+<section class="feature-strip">
+  <div class="feature">
+    <div class="icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
     </div>
-
+    <div>
+      <h3>Academic Excellence</h3>
+      <p>Personalised tutoring and academic support</p>
+    </div>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c2.8.3 5 2.3 5 4.8"/></svg>
+    </div>
+    <div>
+      <h3>Mentorship</h3>
+      <p>Guidance and support for academic and personal growth</p>
+    </div>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+    </div>
+    <div>
+      <h3>Career Readiness</h3>
+      <p>Skills and coaching for future success</p>
+    </div>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M0 20h24"/></svg>
+    </div>
+    <div>
+      <h3>100% Online</h3>
+      <p>Flexible learning from anywhere</p>
+    </div>
+  </div>
 </section>
 
-
-<!-- =========================
-     PROGRAMMES
-========================= -->
-
-<section class="programmes" id="programmes">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>What We Offer</span>
-
-            <h2>
-                Programmes designed for every stage
-                of the learning journey.
-            </h2>
-
-            <p>
-                Our programmes combine academic support with
-                mentorship, personal development and career
-                preparation.
-            </p>
-
-        </div>
-
-
-        <div class="programme-grid">
-
-
-            <div class="programme-card">
-
-                <div class="programme-number">
-                    01 — SCHOOL
-                </div>
-
-                <h3>
-                    Primary & High School Tutoring
-                </h3>
-
-                <p>
-                    Personalised tutoring and academic support
-                    for learners from Grade 4 to Grade 12,
-                    helping them strengthen their understanding,
-                    improve performance and develop effective
-                    study habits.
-                </p>
-
-            </div>
-
-
-            <div class="programme-card">
-
-                <div class="programme-number">
-                    02 — UNIVERSITY
-                </div>
-
-                <h3>
-                    Tertiary Academic Support
-                </h3>
-
-                <p>
-                    Academic assistance for university and
-                    college students, including subject support,
-                    assignment guidance, research assistance
-                    and academic development.
-                </p>
-
-            </div>
-
-
-            <div class="programme-card">
-
-                <div class="programme-number">
-                    03 — CAREERS
-                </div>
-
-                <h3>
-                    Career Guidance & Employability
-                </h3>
-
-                <p>
-                    Career guidance, CV development, interview
-                    preparation and employability support to
-                    help young people make informed career
-                    decisions and prepare for the world of work.
-                </p>
-
-            </div>
-
-
-            <div class="programme-card">
-
-                <div class="programme-number">
-                    04 — MENTORSHIP
-                </div>
-
-                <h3>
-                    Mentorship & Life Skills
-                </h3>
-
-                <p>
-                    Structured mentorship focused on confidence,
-                    leadership, goal setting, communication,
-                    personal development and responsible
-                    decision-making.
-                </p>
-
-            </div>
-
-
-        </div>
-
+<section class="programs">
+  <h2>Our Programs</h2>
+  <p>Comprehensive support across every stage of a learner's academic journey.</p>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="circle orange-light">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <h3>Primary &amp; High School Tutoring</h3>
+      <p>Subject tutoring, exam preparation, study skills and continuous learner support.</p>
     </div>
-
+    <div class="program-card">
+      <div class="circle gray-light">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+      </div>
+      <h3>Tertiary Academic Support</h3>
+      <p>Research support, academic writing, data analysis, and productivity coaching.</p>
+    </div>
+    <div class="program-card">
+      <div class="circle gray-light">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </div>
+      <h3>Career Guidance &amp; Employability</h3>
+      <p>Career counselling, university applications, CV preparation and soft skills training.</p>
+    </div>
+    <div class="program-card">
+      <div class="circle orange-light">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c2.8.3 5 2.3 5 4.8"/></svg>
+      </div>
+      <h3>Mentorship &amp; Life Skills</h3>
+      <p>Mentorship, confidence building, leadership, emotional intelligence and life skills training.</p>
+    </div>
+  </div>
 </section>
-
-
-<!-- =========================
-     WHY SKYVIEW
-========================= -->
-
-<section class="why">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>Why Skyview Academy</span>
-
-            <h2>
-                More than academic support.
-            </h2>
-
-            <p>
-                We focus on developing the whole learner.
-            </p>
-
-        </div>
-
-
-        <div class="why-grid">
-
-
-            <div class="why-card">
-
-                <div class="icon">01</div>
-
-                <h3>
-                    Personalised
-                </h3>
-
-                <p>
-                    Support is structured around the needs,
-                    goals and academic level of each learner.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="icon">02</div>
-
-                <h3>
-                    Accessible
-                </h3>
-
-                <p>
-                    Our online model makes learning support
-                    accessible beyond traditional classroom
-                    settings.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="icon">03</div>
-
-                <h3>
-                    Mentorship
-                </h3>
-
-                <p>
-                    Learners receive guidance that extends
-                    beyond academic performance.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="icon">04</div>
-
-                <h3>
-                    Future Focused
-                </h3>
-
-                <p>
-                    We connect education with career readiness,
-                    employability and lifelong development.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MENTORSHIP
-========================= -->
-
-<section id="mentorship">
-
-    <div class="container">
-
-        <div class="mentorship-grid">
-
-
-            <div class="mentorship-content">
-
-                <span class="small-title">
-                    Mentorship
-                </span>
-
-                <h2>
-                    Helping young people see
-                    what is possible.
-                </h2>
-
-                <p>
-                    Education is not only about passing
-                    examinations. It is also about developing
-                    confidence, direction and the ability to
-                    make informed decisions about the future.
-                </p>
-
-                <p>
-                    Skyview Academy combines academic support
-                    with mentorship and personal development
-                    to help young people navigate their
-                    educational and career journeys.
-                </p>
-
-
-                <ul class="check-list">
-
-                    <li>
-                        Academic confidence
-                    </li>
-
-                    <li>
-                        Goal setting
-                    </li>
-
-                    <li>
-                        Career planning
-                    </li>
-
-                    <li>
-                        Leadership development
-                    </li>
-
-                    <li>
-                        Employability skills
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="mentor-photo">
-
-                <!-- YOUR PHOTO -->
-                <img
-                    src="profile.jpg"
-                    alt="Skyview Academy founder"
-                >
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CALL TO ACTION
-========================= -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <h2>
-            Ready to start your journey?
-        </h2>
-
-        <p>
-            Whether you are a learner, university student,
-            parent or young professional, Skyview Academy
-            is here to support your next step.
-        </p>
-
-        <a href="#contact" class="button">
-            Get in Touch
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact" id="contact">
-
-    <div class="container">
-
-        <div class="contact-grid">
-
-
-            <div class="contact-info">
-
-                <span class="small-title">
-                    Contact Skyview Academy
-                </span>
-
-                <h2>
-                    Let's start a conversation.
-                </h2>
-
-                <p>
-                    Get in touch with us to learn more about
-                    our programmes, tutoring, mentorship and
-                    academic support.
-                </p>
-
-
-                <div class="contact-item">
-
-                    <strong>Email</strong>
-
-                    <span>
-                        info@skyviewacademy.co.za
-                    </span>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>Location</strong>
-
-                    <span>
-                        South Africa
-                    </span>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>Delivery</strong>
-
-                    <span>
-                        Online
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-form">
-
-                <form
-                    action="mailto:info@skyviewacademy.co.za"
-                    method="post"
-                    enctype="text/plain"
-                >
-
-                    <input
-                        type="text"
-                        name="Name"
-                        placeholder="Your name"
-                        required
-                    >
-
-                    <input
-                        type="email"
-                        name="Email"
-                        placeholder="Your email"
-                        required
-                    >
-
-                    <select name="Programme">
-
-                        <option value="">
-                            What are you interested in?
-                        </option>
-
-                        <option>
-                            School Tutoring
-                        </option>
-
-                        <option>
-                            Tertiary Academic Support
-                        </option>
-
-                        <option>
-                            Career Guidance
-                        </option>
-
-                        <option>
-                            Mentorship
-                        </option>
-
-                    </select>
-
-
-                    <textarea
-                        name="Message"
-                        placeholder="How can we help?"
-                    ></textarea>
-
-
-                    <button type="submit">
-                        Send Enquiry
-                    </button>
-
-                </form>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="footer-grid">
-
-
-        <div>
-
-            <h3>
-                Skyview Academy
-            </h3>
-
-            <p>
-                Advancing Excellence through personalised
-                education, mentorship and career development.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Explore
-            </h3>
-
-            <a href="#about">About</a>
-
-            <a href="#programmes">Programmes</a>
-
-            <a href="#mentorship">Mentorship</a>
-
-            <a href="#contact">Contact</a>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Programmes
-            </h3>
-
-            <a href="#programmes">
-                School Tutoring
-            </a>
-
-            <a href="#programmes">
-                University Support
-            </a>
-
-            <a href="#programmes">
-                Career Guidance
-            </a>
-
-            <a href="#programmes">
-                Mentorship
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="copyright">
-
-        © 2026 Skyview Academy. All rights reserved.
-
-    </div>
-
-</footer>
-
 
 </body>
 </html>
